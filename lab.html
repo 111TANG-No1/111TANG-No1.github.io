@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Lab · 唐家琦</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--ink2:#3a3830;--ink3:#7a7668;--paper:#faf9f6;--paper2:#f2f0eb;--rule:#e4e0d8;--accent:#1a3a5c;--accent2:#c8a96e;--accent-light:#eef2f7;--teal:#0d5c4a;--teal-light:#edf7f4}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);padding:0 48px;height:54px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--accent);letter-spacing:.2px;text-decoration:none}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.lab-hero{margin-top:54px;background:var(--ink);color:white;padding:72px 0 56px}
+.lab-hero-inner{max-width:900px;margin:0 auto;padding:0 48px}
+.lab-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.lab-hero h1{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;line-height:1.08;margin-bottom:16px}
+.lab-hero h1 em{font-style:italic;color:var(--accent2)}
+.lab-hero-desc{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;line-height:1.8}
+.lab-body{max-width:900px;margin:0 auto;padding:72px 48px 80px}
+.lab-section{margin-bottom:72px}
+.section-header{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;padding-bottom:16px;border-bottom:2px solid var(--rule)}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent2);letter-spacing:1.5px;text-transform:uppercase;background:#fdf6e8;border:1px solid rgba(200,169,110,.3);padding:3px 10px;border-radius:2px;white-space:nowrap}
+.section-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink)}
+.lab-card{background:white;border:1.5px solid var(--rule);border-radius:6px;overflow:hidden;box-shadow:0 2px 16px rgba(15,14,12,.06)}
+.lab-card-head{padding:28px 32px 20px;border-bottom:1px solid var(--paper2)}
+.lab-card-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.lab-card-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.lab-card-desc{font-size:.9rem;color:var(--ink3);line-height:1.7}
+.lab-card-body{padding:24px 32px}
+.figma-embed-placeholder{background:var(--paper2);border:2px dashed var(--rule);border-radius:4px;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:40px}
+.figma-embed-placeholder .ph-icon{font-size:2.5rem;opacity:.4}
+.figma-embed-placeholder .ph-title{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:1px}
+.figma-embed-placeholder .ph-sub{font-size:.8rem;color:var(--ink3);max-width:300px;line-height:1.6}
+.analysis-card{background:white;border:1.5px solid var(--rule);border-radius:6px;padding:32px;box-shadow:0 2px 16px rgba(15,14,12,.06)}
+.analysis-card-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.a-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:3px 10px;border-radius:2px;background:var(--accent-light);border:1px solid rgba(26,58,92,.2);color:var(--accent)}
+.analysis-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.analysis-card p{font-size:.92rem;color:var(--ink2);line-height:1.78;margin-bottom:20px}
+.btn-read{display:inline-block;padding:10px 24px;background:var(--accent);color:white;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;text-decoration:none;letter-spacing:.3px;transition:all .15s}
+.btn-read:hover{background:#142e4a;transform:translateY(-1px)}
+.coming-soon{background:var(--paper2);border:1px dashed var(--rule);border-radius:4px;padding:24px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);letter-spacing:.5px;margin-top:16px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);text-decoration:none;margin-bottom:32px;transition:color .15s}
+.back-link:hover{color:var(--accent)}
+footer{text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink3);border-top:1px solid var(--rule)}
+@media(max-width:640px){nav{padding:0 20px}.nav-links{gap:20px}.lab-hero-inner,.lab-body{padding-left:20px;padding-right:20px}.lab-hero h1{font-size:2.2rem}.lab-card-head,.lab-card-body{padding-left:20px;padding-right:20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="./index.html" class="nav-logo">唐家琦 · Tang Jiaqi</a>
+  <ul class="nav-links">
+    <li><a href="./index.html#projects">Projects</a></li>
+    <li><a href="./index.html#experience">Experience</a></li>
+    <li><a href="./index.html#education">Education</a></li>
+    <li><a href="./lab.html" class="active">Product Lab</a></li>
+    <li><a href="./index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="lab-hero">
+  <div class="lab-hero-inner">
+    <div class="lab-eyebrow">Product Lab</div>
+    <h1>深度洞察<br>与<em>概念原型</em></h1>
+    <p class="lab-hero-desc">记录对数字化产品的深度思考、交互逻辑拆解以及基于真实痛点的概念原型设计。从实体商业的 ROI 意识出发，探索线上产品的设计可能性。</p>
+  </div>
+</div>
+
+<div class="lab-body">
+  <a href="./index.html" class="back-link">← 返回主页</a>
+
+  <!-- SECTION A: Concept Prototype -->
+  <div class="lab-section">
+    <div class="section-header">
+      <span class="section-tag">Concept Prototype</span>
+      <span class="section-title">概念原型</span>
+    </div>
+
+    <div class="lab-card">
+      <div class="lab-card-head">
+        <div class="lab-card-tag">O2O · 小程序设计 · 基于真实业务痛点</div>
+        <div class="lab-card-title">移动咖啡车「极速预约」小程序</div>
+        <div class="lab-card-desc">针对高中生课间 10 分钟极致场景设计的 O2O 预约取餐原型。解决线下实体高峰期「炸单」与「履约不确定性」两大核心痛点，通过错峰预约机制拉平潮汐效应，提升人效与用户体验。</div>
+      </div>
+      <div class="lab-card-body">
+        <div class="figma-embed-placeholder">
+          <div class="ph-icon">⬡</div>
+          <div class="ph-title">Figma 原型图 · 即将放入</div>
+          <div class="ph-sub">交互设计稿制作中，完成后将嵌入 Figma Embed 或替换为高清截图</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION B: Product Analysis -->
+  <div class="lab-section">
+    <div class="section-header">
+      <span class="section-tag">Product Analysis</span>
+      <span class="section-title">产品分析</span>
+    </div>
+
+    <div class="analysis-card">
+      <div class="analysis-card-meta">
+        <span class="a-tag">O2O</span>
+        <span class="a-tag">微信生态</span>
+        <span class="a-tag">履约效率</span>
+        <span class="a-tag">用户留存</span>
+      </div>
+      <h3>从履约效率看 O2O 小程序设计：瑞幸 vs 独立咖啡馆</h3>
+      <p>分析线下实体商业在微信生态下的交易闭环差异。瑞幸通过小程序实现"下单即出杯"的确定性履约，将用户等待时间焦虑转化为取餐时间选择权；而独立咖啡馆受制于流量稀薄和工具缺失，往往只能停留在"收款码"阶段，错失私域沉淀机会。探讨确定性履约对用户留存与 ROI 的实质影响，以及移动咖啡车如何借鉴连锁品牌的数字化经验实现竞争突围。</p>
+      <a href="#" class="btn-read">阅读全文 →</a>
+    </div>
+
+    <div class="coming-soon" style="margin-top:20px">// 更多产品分析文章持续更新中</div>
+  </div>
+
+</div>
+
+<footer>Tang Jiaqi · Product Lab · 2026</footer>
+</body>
+</html>
