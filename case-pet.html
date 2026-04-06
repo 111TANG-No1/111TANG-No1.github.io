@@ -4,170 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Study · Pet Pal Hub · 唐家琦</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0f0f0f;--ink3:#555;--ink4:#888;--rule:#e0ddd8;--bg:#fafaf8;--bg2:#f4f3ef;--accent:#1a3a5c;--accent2:#c8a96e;--white:#fff;--shadow:0 2px 20px rgba(0,0,0,.06)}
+:root{--ink:#0f0e0c;--ink2:#3a3830;--ink3:#7a7668;--paper:#faf9f6;--paper2:#f2f0eb;--rule:#e4e0d8;--accent:#0d5c4a;--accent2:#c8a96e;--accent-light:#edf7f4}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.8;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
-.nav-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent);font-weight:700}
-.back-btn{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);text-decoration:none;padding:6px 14px;border:1px solid rgba(26,58,92,.25);border-radius:6px;transition:all .15s}
-.back-btn:hover{background:#eef2fa}
-.hero-banner{background:linear-gradient(135deg,#0d2a42 0%,#1a3a5c 60%,#2a5080 100%);padding:100px 40px 60px;text-align:center}
-.case-tag{display:inline-block;padding:4px 14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:rgba(255,255,255,.8);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.hero-banner h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px}
-.hero-banner p{color:rgba(255,255,255,.75);font-size:1rem;max-width:600px;margin:0 auto 28px}
-.meta-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
-.meta-item{text-align:center}
-.meta-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1;display:block;margin-bottom:4px}
-.meta-lbl{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px}
-.article{max-width:760px;margin:0 auto;padding:60px 40px 80px}
-.section-marker{display:flex;align-items:center;gap:12px;margin:48px 0 20px}
-.section-marker::before,.section-marker::after{content:'';flex:1;height:1px;background:var(--rule)}
-.section-marker span{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink4);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.25}
-h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--accent);margin:24px 0 10px}
-p{color:var(--ink3);margin-bottom:16px;line-height:1.82}
-.lead{font-size:1.1rem;color:var(--ink);font-weight:500;line-height:1.7;margin-bottom:24px;padding-left:16px;border-left:3px solid var(--accent2)}
-.highlight-box{background:var(--bg2);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;font-size:.95rem;color:var(--ink3)}
-.highlight-box strong{color:var(--ink)}
-.placeholder-img{background:var(--bg2);border:1.5px dashed var(--rule);border-radius:10px;height:260px;display:flex;align-items:center;justify-content:center;margin:24px 0;flex-direction:column;gap:8px}
-.placeholder-img span{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink4)}
-ul.cs-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-ul.cs-list li{padding-left:18px;position:relative;font-size:.95rem;color:var(--ink3);line-height:1.65}
-ul.cs-list li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.7rem;top:3px}
-.metrics-row{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}
-.m-card{background:var(--white);border:1.5px solid var(--rule);border-radius:10px;padding:14px 18px;text-align:center;flex:1;min-width:100px;box-shadow:var(--shadow)}
-.m-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);display:block;line-height:1;margin-bottom:4px}
-.m-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink4)}
-.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
-.tag{padding:4px 12px;border-radius:20px;font-size:.72rem;font-family:'JetBrains Mono',monospace;background:var(--bg2);border:1px solid var(--rule);color:var(--ink3)}
-.evo-flow{display:flex;flex-direction:column;gap:0;margin:20px 0}
-.evo-step{display:flex;gap:16px;align-items:flex-start;position:relative;padding-bottom:20px}
-.evo-step::before{content:'';position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--rule)}
-.evo-step:last-child::before{display:none}
-.evo-dot{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;flex-shrink:0;margin-top:2px}
-.evo-content{flex:1}
-.evo-title{font-weight:600;color:var(--ink);margin-bottom:4px;font-size:.95rem}
-.evo-desc{font-size:.88rem;color:var(--ink3);line-height:1.6}
-.cs-footer{text-align:center;padding:32px;border-top:1px solid var(--rule);font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink4)}
-.cs-footer a{color:var(--accent);text-decoration:none}
-@media(max-width:640px){nav{padding:0 20px}.hero-banner{padding:80px 20px 48px}.article{padding:40px 20px 60px}}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);padding:0 48px;height:54px;display:flex;align-items:center;gap:24px}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);text-decoration:none;letter-spacing:.5px;transition:color .15s}.nav-back:hover{color:var(--accent)}
+.nav-title{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);letter-spacing:.5px}
+.case-hero{margin-top:54px;background:var(--accent);color:white;padding:64px 0 48px}
+.case-hero-inner{max-width:780px;margin:0 auto;padding:0 48px}
+.case-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.case-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;line-height:1.1;margin-bottom:16px}
+.case-hero h1 em{font-style:italic;color:var(--accent2)}
+.case-hero p{color:rgba(255,255,255,.75);font-size:1rem;max-width:560px;margin-bottom:32px}
+.meta-row{display:flex;gap:32px;flex-wrap:wrap}
+.meta-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.meta-val{font-size:.88rem;color:rgba(255,255,255,.85)}
+.case-body{max-width:780px;margin:0 auto;padding:64px 48px 80px}
+h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin:48px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+h3{font-weight:500;color:var(--accent);margin:28px 0 12px;text-transform:uppercase;letter-spacing:.5px;font-size:.82rem;font-family:'Instrument Sans',sans-serif}
+p{color:var(--ink2);margin-bottom:18px}
+ul,ol{color:var(--ink2);padding-left:24px;margin-bottom:18px}
+li{margin-bottom:8px;line-height:1.7}
+.callout{background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 3px 3px 0;padding:16px 20px;margin:24px 0;color:var(--ink2);font-size:.92rem}
+.callout strong{color:var(--accent)}
+.highlight{background:#fdf6e8;border-left:3px solid var(--accent2);border-radius:0 3px 3px 0;padding:16px 20px;margin:24px 0;color:var(--ink2);font-size:.92rem}
+.metrics-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.metric-card{background:white;border:1px solid var(--rule);border-radius:3px;padding:18px 16px;text-align:center}
+.metric-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);display:block;line-height:1;margin-bottom:4px}
+.metric-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--ink3)}
+/* Screenshot gallery */
+.screenshot-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+.screenshot-item{display:flex;flex-direction:column;align-items:center;gap:8px}
+.screenshot-item img{width:100%;border-radius:12px;border:1px solid var(--rule);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.screenshot-label{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink3);text-align:center;letter-spacing:.3px}
+.screenshot-single{margin:28px 0}
+.screenshot-single img{width:100%;max-width:360px;display:block;margin:0 auto;border-radius:12px;border:1px solid var(--rule);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.flow-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:20px 0}
+.flow-step{background:var(--accent-light);border:1px solid rgba(13,92,74,.2);border-radius:3px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);font-weight:500}
+.flow-arrow{color:var(--ink3);font-size:14px}
+.divider{border:none;border-top:1px solid var(--rule);margin:40px 0}
+.case-footer{background:var(--ink);color:white;padding:40px 48px;text-align:center}
+.case-footer a{color:rgba(255,255,255,.6);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.72rem;transition:color .15s}.case-footer a:hover{color:white}
+@media(max-width:640px){nav,.case-hero-inner,.case-body,.case-footer{padding-left:20px;padding-right:20px}.case-hero h1{font-size:2rem}.metrics-row,.screenshot-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-brand">唐家琦 · Tang Jiaqi</div>
-  <a href="./index.html" class="back-btn">← Back to Home</a>
+  <a href="./index.html" class="nav-back">← Back to Home</a>
+  <span class="nav-title">/ Case Study · Pet Pal Hub</span>
 </nav>
 
-<div class="hero-banner">
-  <div class="case-tag">Case Study · Product Deep Dive</div>
-  <h1>Pet Pal Hub</h1>
-  <p>宠物伴侣多维社交与 AI 健康管理 MVP —— 从真实痛点到零后端产品闭环</p>
-  <div class="meta-row">
-    <div class="meta-item"><span class="meta-num">30+</span><div class="meta-lbl">用户验证</div></div>
-    <div class="meta-item"><span class="meta-num">4</span><div class="meta-lbl">核心模块</div></div>
-    <div class="meta-item"><span class="meta-num">0</span><div class="meta-lbl">后端依赖</div></div>
-    <div class="meta-item"><span class="meta-num">2026.02</span><div class="meta-lbl">上线时间</div></div>
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Case Study · Project 03</div>
+    <h1>Pet Pal<br><em>Hub</em></h1>
+    <p>宠物伴侣多维社交与 AI 健康管理 MVP——从大型犬主人的真实困境出发，构建 LBS 匹配漏斗与轻量化 AI 健康助手。</p>
+    <div class="meta-row">
+      <div><div class="meta-label">时间</div><div class="meta-val">2026.02 — 至今</div></div>
+      <div><div class="meta-label">角色</div><div class="meta-val">独立产品负责人</div></div>
+      <div><div class="meta-label">技术栈</div><div class="meta-val">React · TypeScript · Vercel</div></div>
+      <div><div class="meta-label">Demo</div><div class="meta-val"><a href="https://my-pet-pal-37.vercel.app" target="_blank" style="color:var(--accent2);text-decoration:none">在线访问 ↗</a></div></div>
+    </div>
   </div>
 </div>
 
-<div class="article">
+<div class="case-body">
 
-  <div class="section-marker"><span>01 · 背景与痛点</span></div>
-  <h2>问题从哪里来？</h2>
-  <p class="lead">搬家换了新小区后，作为大型犬主人，我长期无法找到条件合适的狗友——不是「找不到其他狗」，而是随机遇见的成功率极低。</p>
-  <p>遇到小型犬，还没靠近就开始狂叫；遇到体型相当的大型犬，还要看性别（母狗和公狗之间有特殊社交张力）；遇到攻击性强的大型犬需要提早离开。多重门槛让「找到合适狗友」这件事的成功率极低。</p>
-  <div class="highlight-box"><strong>核心洞察：</strong>现有宠物社交产品（小红书宠物圈等）全是内容平台逻辑——没有任何产品解决「找到条件精准匹配的宠物伙伴」这个问题。</div>
-  <p>与此同时，健康记录分散（纸质本容易丢失）、咨询 AI 时缺乏宠物上下文，也是高频困扰。</p>
-
-  <div class="section-marker"><span>02 · 产品演进逻辑</span></div>
-  <h2>为什么是这个功能顺序？</h2>
-  <div class="evo-flow">
-    <div class="evo-step">
-      <div class="evo-dot">01</div>
-      <div class="evo-content">
-        <div class="evo-title">宠友多维匹配（切入点）</div>
-        <div class="evo-desc">体型/性别/年龄/性格多维筛选 + 互赞聊天内闭环。从最核心的差异化需求切入，先找到「能用」的理由。</div>
-      </div>
-    </div>
-    <div class="evo-step">
-      <div class="evo-dot">02</div>
-      <div class="evo-content">
-        <div class="evo-title">周边服务发现（场景延伸）</div>
-        <div class="evo-desc">遛狗场景自然延伸出「找附近宠物医院/餐厅」的需求，列表/地图双视图，LBS 让产品价值随位置动态生成。</div>
-      </div>
-    </div>
-    <div class="evo-step">
-      <div class="evo-dot">03</div>
-      <div class="evo-content">
-        <div class="evo-title">健康档案（数据沉淀）</div>
-        <div class="evo-desc">疫苗/病史/体重记录，解决纸质本易丢失痛点。同时为 AI 助手提供上下文基础数据。</div>
-      </div>
-    </div>
-    <div class="evo-step">
-      <div class="evo-dot">04</div>
-      <div class="evo-content">
-        <div class="evo-title">AI 健康助手（数据自然生长）</div>
-        <div class="evo-desc">当档案数据都在产品里，AI 才能做到真正的上下文问答。这是数据积累后自然生长出来的能力，不是硬加的功能。</div>
-      </div>
-    </div>
-  </div>
-
- <img src="./pet-screenshot-1.PNG" class="case-study-img" alt="宠物档案页面">
-    <span>🖥 产品界面截图 / 功能架构图</span>
-    <span style="font-size:.65rem;color:#bbb">待填入实际图片</span>
-  </div>
-
-  <div class="section-marker"><span>03 · 关键设计决策</span></div>
-  <h2>三个核心产品决策</h2>
-
-  <h3>① AI 助手的边界设计</h3>
-  <p>System Prompt 明确设定：AI 可以做「健康分流」（告诉用户问题是紧急还是可以观察），但不替代兽医诊断，不开具体药方。这是产品责任边界，也是防止 AI 幻觉造成用户错误决策的保护机制。</p>
-  <div class="highlight-box"><strong>双层架构：</strong>LLM 接口优先 → 超时 8 秒自动降级为模板回复。AI 是增强层，不是依赖层——降级后产品依然有完整价值。</div>
-
-  <h3>② 零后端架构的取舍</h3>
-  <p>v1 阶段选择纯前端部署，localStorage 持久化 + JSON 导出备份。</p>
-  <div class="tag-row">
-    <span class="tag">优势：快速上线验证</span>
-    <span class="tag">优势：零运维成本</span>
-    <span class="tag">代价：无多设备同步</span>
-    <span class="tag">代价：无法追踪行为数据</span>
-  </div>
-  <p>这是 MVP 阶段有意识的取舍。v2 计划接入用户账号体系，才能真正追踪留存和复访数据。</p>
-
-  <h3>③ 多维筛选的设计依据</h3>
-  <p>筛选维度（体型/性别/年龄/性格）来自真实遛狗场景洞察：每个维度都对应一个真实的「见面失败」场景，不是拍脑袋设计的。</p>
-
-  <div class="placeholder-img">
-    <span>📱 AI 助手交互截图 / 筛选漏斗示意图</span>
-    <span style="font-size:.65rem;color:#bbb">待填入实际图片</span>
-  </div>
-
-  <div class="section-marker"><span>04 · 用户验证</span></div>
-  <h2>30+ 用户说了什么？</h2>
   <div class="metrics-row">
-    <div class="m-card"><span class="m-num">30+</span><div class="m-lbl">目标用户试用</div></div>
-    <div class="m-card"><span class="m-num">4</span><div class="m-lbl">核心功能模块</div></div>
-    <div class="m-card"><span class="m-num">0</span><div class="m-lbl">后端依赖</div></div>
+    <div class="metric-card"><span class="metric-num">30+</span><div class="metric-label">真实用户验证</div></div>
+    <div class="metric-card"><span class="metric-num">4</span><div class="metric-label">核心功能模块</div></div>
+    <div class="metric-card"><span class="metric-num">2</span><div class="metric-label">AI 降级保障层</div></div>
   </div>
-  <p>面向 30+ 目标用户进行试用，验证了「宠友匹配 + 周边服务 + 健康档案 + AI 助手」一体化组合的可用性。有用户表示「会在遛狗前查一下周边」和「把这个当健康记录本用了」——复访意愿的定性信号。</p>
-  <div class="highlight-box"><strong>诚实说明：</strong>v1 使用 localStorage，无法追踪次日留存等量化数据。v2 接入账号体系后才能真正验证产品粘性。</div>
 
-  <div class="section-marker"><span>05 · 复盘与反思</span></div>
-  <h2>如果重来，我会做什么不同？</h2>
-  <ul class="cs-list">
-    <li><strong>更早考虑冷启动：</strong>社交产品有强烈网络效应，单用户价值有限。应该在设计阶段就规划冷启动策略。</li>
-    <li><strong>AI 接入优先级前置：</strong>AI 助手是差异化功能，应该在 MVP 阶段就完整接通，而不是依赖 Fallback 演示。</li>
-    <li><strong>更早定义量化成功指标：</strong>「30 个用户说好用」不够有说服力，需要设定可测量的北极星指标。</li>
+  <h2>背景与问题定义</h2>
+  <p>我养了一只大型犬，搬家换了新小区后长期找不到合适的狗友。表面上是「找不到其他狗」，实际问题更复杂——遇到小型犬，我的狗还没靠近对方就开始狂叫，氛围剑拔弩张；好不容易遇到体型相当的大型犬，还要看性别，母狗和公狗之间有特殊的社交张力；性格也是变量，遇到攻击性强的大型犬两条狗都会受伤。</p>
+  <p>随机遇见的成功率极低。现有产品（小红书宠物圈、陌生人匹配类App）全是内容平台逻辑，没有任何产品解决「找到条件精准匹配的宠物伙伴」这个问题。</p>
+  <div class="callout"><strong>核心洞察：</strong>宠物社交的痛点不是「找不到狗」，而是「见了才发现不合适」的成本太高。解决方案应该让用户先筛选再见面，而不是随机相遇。</div>
+
+  <h2>产品演进逻辑</h2>
+  <p>这个产品不是一次性规划出来的，而是沿着用户数据自然生长的路径迭代：</p>
+  <div class="flow-row">
+    <div class="flow-step">🐾 宠物社交匹配</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">📍 周边服务发现</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🏥 健康档案</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">🤖 AI 健康助手</div>
+  </div>
+  <div class="highlight"><strong>产品哲学：</strong>AI 功能是数据沉淀之后自然生长出来的能力，而不是为了有 AI 而加 AI。当档案数据都在产品里，AI 才能真正做到有上下文的问答。</div>
+
+  <hr class="divider">
+
+  <h2>产品功能展示</h2>
+
+  <!-- 三张截图横排 -->
+  <div class="screenshot-row">
+    <div class="screenshot-item">
+      <img src="./pet-screenshot-1.PNG" alt="宠物档案页面">
+      <div class="screenshot-label">宠物健康档案</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="./pet-screenshot-2.PNG" alt="AI健康助手">
+      <div class="screenshot-label">AI 健康助手</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="./pet-screenshot-3.PNG" alt="周边地点发现">
+      <div class="screenshot-label">周边服务地图</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>核心功能拆解</h2>
+
+  <h3>模块一：宠友多维匹配漏斗</h3>
+  <p>筛选维度：体型（大/中/小）、性别、年龄段（幼年/成年/老年）、性格标签（活泼/安静/友善/敏感）、距离范围。用户先筛选再见面，把「见了才发现不合适」的成本降到最低。双方互赞后进入聊天内闭环。</p>
+
+  <h3>模块二：周边宠物服务地点发现</h3>
+  <p>支持医院/诊所、宠物店、猫咖/狗咖、宠物友好餐厅、宠物公园等分类，列表视图和地图视图双入口。宠物场景有强烈的地理属性，遛狗时顺手查周边是高频真实需求。</p>
+
+  <h3>模块三：宠物健康档案</h3>
+  <p>疫苗记录、病史、体重趋势，解决纸质记录本易丢失的痛点。档案数据同时作为 AI 助手的上下文基础——当 AI 知道「这只狗3岁、德牧、上个月打过疫苗」，回答会更有针对性。</p>
+
+  <h3>模块四：AI 健康助手——双层架构设计</h3>
+  <p>对话式交互，支持选择「当前宠物」作为上下文。三个快捷入口：健康分流、喂养训练、记录回溯。</p>
+  <div class="callout">
+    <strong>双层降级机制：</strong>优先调用 LLM 接口实现真实 AI 对话 → 超过 8 秒 timeout 自动降级为分类模板回复（健康类/喂养类/通用类）。用户无感知，产品不会因 AI 不可用而崩溃。<br><br>
+    <strong>Prompt 边界设计：</strong>AI 可以做「健康分流」（告诉用户症状可能的原因和就医紧迫性），但不开具体药方。这是产品责任边界，也是防止 AI 幻觉造成用户错误决策的保护机制。
+  </div>
+
+  <hr class="divider">
+
+  <h2>技术架构：零后端轻量化方案</h2>
+  <p>v1 版本纯前端部署在 Vercel，使用 localStorage 存储所有用户数据（宠物档案、对话记录），支持 JSON 导出备份。</p>
+  <p>这个选择的逻辑：MVP 阶段快速验证产品核心功能优先，代价是没有跨设备同步和用户行为追踪。这是有意识的取舍，不是技术能力不足。下一版本将引入账号体系获取量化数据。</p>
+
+  <hr class="divider">
+
+  <h2>用户验证结果</h2>
+  <p>面向 30+ 目标用户完成可用性验证。由于 v1 无后端、无账号体系，无法追踪留存数据，用户验证以定性访谈和主观反馈为主。</p>
+  <div class="callout"><strong>诚实说明：</strong>没有量化的次日留存率或回访数据。用户反馈中有人表示「会在遛狗前查一下周边」和「把这个当健康记录本用了」——这是有复访行为意愿的信号，但需要账号体系才能真正追踪。</div>
+
+  <h2>复盘与下一步</h2>
+  <ul>
+    <li>宠物社交冷启动策略应在产品设计阶段就规划（基于地理区域的 Beta 用户招募）</li>
+    <li>AI 真实接入优先级应该提前——v1 的 fallback 机制稳定，但真实 AI 能力是差异化核心</li>
+    <li>引入用户账号体系，实现数据持久化与留存追踪</li>
+    <li>接入 RAG 知识库提升 AI 回答质量，配合宠物档案做个性化问答</li>
   </ul>
-
 </div>
 
-<div class="cs-footer">
-  ← <a href="./index.html">返回主页</a> · 唐家琦 Tang Jiaqi · 产品复盘文章
+<div class="case-footer">
+  <a href="./case-coffee.html">← 上一个：移动咖啡车</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="./index.html">返回主页 →</a>
 </div>
-
 </body>
 </html>
