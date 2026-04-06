@@ -37,7 +37,9 @@ h1 em{font-style:italic;color:var(--accent)}
 .btn-g{padding:11px 24px;background:var(--ink);color:#fff;border:none;border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:.75rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,transform .15s;font-weight:500}
 .btn-g:hover{background:#333;transform:translateY(-1px)}
 
-.hero-right{display:flex;align-items:center;justify-content:center}
+.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+.hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--rule);box-shadow:var(--shadow-lg)}
+.hero-photo-placeholder{width:200px;height:200px;border-radius:50%;background:var(--rule);border:3px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink4)}
 .hero-card{background:var(--white);border:1.5px solid var(--rule);border-radius:16px;padding:26px;box-shadow:var(--shadow-lg);width:100%;max-width:320px}
 .hc-label{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--ink4);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
 .hc-stat{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--rule)}
@@ -145,6 +147,7 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
     </div>
   </div>
   <div class="hero-right">
+    <img src="./profile-photo.PNG" alt="唐家琦" class="hero-photo" onerror="this.style.display='none'">
     <div class="hero-card">
       <div class="hc-label">// Core Metrics</div>
       <div class="hc-stat">
@@ -190,7 +193,7 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
         <div class="pcard-metrics">
           <div class="metric"><span class="metric-num">400+</span><div class="metric-lbl">推广覆盖</div></div>
           <div class="metric"><span class="metric-num">50+</span><div class="metric-lbl">真实反馈</div></div>
-          <div class="metric"><span class="metric-num">100+</span><div class="metric-lbl">课程收录</div></div>
+          <div class="metric"><span class="metric-num">100</span><div class="metric-lbl">课程收录</div></div>
         </div>
         <div class="pcard-actions">
           <a href="https://111tang-no1.github.io/yonsei-course-finder/" target="_blank" class="btn-demo">查看 Demo ↗</a>
@@ -213,14 +216,14 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
         </div>
       </div>
       <div class="pcard-body">
-        <p class="pcard-desc">运用「流量 × 转化 × 竞品」模型精准选址，跑通单点盈利模型。通过微信私域社群精细化运营与异业联盟，核心时段复购率稳定在 80% 以上，首月实现资金回正，积累了完整的线下场景用户洞察与快速迭代经验。</p>
+        <p class="pcard-desc">运用「流量 × 转化 × 竞品」模型精准选址，跑通单点盈利模型。通过异业联盟，核心时段复购率稳定在 80% 以上，首月实现资金回正，积累了完整的线下场景用户洞察与快速迭代经验。</p>
         <div class="pcard-metrics">
           <div class="metric"><span class="metric-num">80%+</span><div class="metric-lbl">核心复购率</div></div>
           <div class="metric"><span class="metric-num">100+</span><div class="metric-lbl">固定客户</div></div>
           <div class="metric"><span class="metric-num">首月</span><div class="metric-lbl">实现回正</div></div>
         </div>
         <div class="pcard-actions">
-          <a href="#" class="btn-case">查看项目复盘 →</a>
+          <a href="./case-coffee.html" class="btn-case">查看项目复盘 →</a>
         </div>
       </div>
     </div>
@@ -263,8 +266,8 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
       <div class="exp-title">吉林大学韩语文化社团</div>
       <div class="exp-role">策划宣传部部长 | 2021.09 — 2023.05</div>
       <ul class="exp-ul">
-        <li><strong>统筹管理：</strong>建立标准化任务分配与进度跟进看板，领导 30+ 成员并行推进 20 余场大型活动。</li>
-        <li><strong>用户增长：</strong>统筹线上线下全渠道宣传矩阵，构建高质量视觉物料输出体系，核心活动单场参与人数峰值突破 80+，整体参与度提升 160%。</li>
+        <li><strong>统筹管理：</strong>建立标准化任务看板，领导 30+ 成员，并行推进 20 余场大型活动。</li>
+        <li><strong>用户增长：</strong>构建线上线下全渠道宣传矩阵，核心活动单场参与人数峰值突破 80+，整体参与度提升 160%。</li>
       </ul>
     </div>
   </div>
@@ -290,7 +293,7 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
     <div class="edu-card fi">
       <div>
         <div class="edu-school">吉林大学（985）</div>
-        <div class="edu-deg">本科 · 朝鲜语文学学士 & 保险学（精算数学方向）经济学士双学位 </div>
+        <div class="edu-deg">本科 · 朝鲜语学士 & 保险（精算数学方向） 经济学双学位</div>
       </div>
       <div class="edu-date">2020.09 — 2025.06</div>
     </div>
@@ -324,7 +327,7 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
   <h2>一起创造真实商业价值</h2>
   <p class="contact-slogan">致力于通过技术创新与同理心，创造真实的商业价值<br>寻找 2026 暑期实习机会</p>
   <div class="contact-links">
-    <a href="mailto:1092830683@qq.com" class="clink">✉ 1092830683@qq.com</a>
+    <a href="/cdn-cgi/l/email-protection#bd8c8d848f858e8d8b858efdcccc93ded2d0" class="clink">✉ <span class="__cf_email__" data-cfemail="6f5e5f565d575c5f59575c2f1e1e410c0002">[email&#160;protected]</span></a>
     <a href="https://github.com/111TANG-No1" target="_blank" class="clink">⌥ GitHub ↗</a>
     <a href="tel:13654376920" class="clink">☏ 136-5437-6920</a>
   </div>
@@ -332,9 +335,5 @@ footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;fon
 
 <footer>Tang Jiaqi · Product Portfolio · 2026</footer>
 
-<script>
-const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*80)})},{threshold:.08});
-document.querySelectorAll('.fi').forEach(el=>io.observe(el));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const io=
