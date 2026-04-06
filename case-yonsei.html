@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study · Yonsei Course Finder · 唐家琦</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--ink2:#3a3830;--ink3:#7a7668;--paper:#faf9f6;--paper2:#f2f0eb;--rule:#e4e0d8;--accent:#1a3a5c;--accent2:#c8a96e;--accent-light:#eef2f7}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);padding:0 48px;height:54px;display:flex;align-items:center;gap:24px}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink3);text-decoration:none;letter-spacing:.5px;transition:color .15s}.nav-back:hover{color:var(--accent)}
+.nav-title{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink3);letter-spacing:.5px}
+.case-hero{margin-top:54px;background:var(--accent);color:white;padding:64px 0 48px}
+.case-hero-inner{max-width:780px;margin:0 auto;padding:0 48px}
+.case-tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.case-hero h1{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;line-height:1.1;margin-bottom:16px}
+.case-hero h1 em{font-style:italic;color:var(--accent2)}
+.case-hero p{color:rgba(255,255,255,.75);font-size:1rem;max-width:560px;margin-bottom:32px}
+.meta-row{display:flex;gap:32px;flex-wrap:wrap}
+.meta-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.meta-val{font-size:.88rem;color:rgba(255,255,255,.85)}
+.case-body{max-width:780px;margin:0 auto;padding:64px 48px 80px}
+h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin:48px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+h3{font-family:'Instrument Sans',sans-serif;font-weight:500;color:var(--accent);margin:28px 0 12px;text-transform:uppercase;letter-spacing:.5px;font-size:.82rem}
+p{color:var(--ink2);margin-bottom:18px}
+ul,ol{color:var(--ink2);padding-left:24px;margin-bottom:18px}
+li{margin-bottom:8px;line-height:1.7}
+.callout{background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 3px 3px 0;padding:16px 20px;margin:24px 0;color:var(--ink2);font-size:.92rem}
+.callout strong{color:var(--accent)}
+.highlight{background:#fdf6e8;border-left:3px solid var(--accent2);border-radius:0 3px 3px 0;padding:16px 20px;margin:24px 0;color:var(--ink2);font-size:.92rem}
+.placeholder-img{background:var(--paper2);border:1px dashed var(--rule);border-radius:4px;height:280px;display:flex;align-items:center;justify-content:center;margin:28px 0}
+.placeholder-img span{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--ink3);letter-spacing:.5px}
+.case-study-img{width:100%;border-radius:4px;border:1px solid var(--rule);margin:28px 0;display:block}
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}
+.metric-card{background:white;border:1px solid var(--rule);border-radius:3px;padding:18px 16px;text-align:center}
+.metric-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);display:block;line-height:1;margin-bottom:4px}
+.metric-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--ink3)}
+.divider{border:none;border-top:1px solid var(--rule);margin:40px 0}
+.case-footer{background:var(--ink);color:white;padding:40px 48px;text-align:center}
+.case-footer a{color:rgba(255,255,255,.6);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.72rem;transition:color .15s}.case-footer a:hover{color:white}
+@media(max-width:640px){nav,.case-hero-inner,.case-body,.case-footer{padding-left:20px;padding-right:20px}.case-hero h1{font-size:2rem}.metrics-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="./index.html" class="nav-back">← Back to Home</a>
+  <span class="nav-title">/ Case Study · Yonsei Course Finder</span>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Case Study · Project 01</div>
+    <h1>Yonsei<br><em>Course Finder</em></h1>
+    <p>AI 驱动的选课决策工具——从真实痛点出发，用 OCR + LLM + 本地规则三层架构解决延世大学选课信息不透明问题。</p>
+    <div class="meta-row">
+      <div><div class="meta-label">时间</div><div class="meta-val">2026.01 — 至今</div></div>
+      <div><div class="meta-label">角色</div><div class="meta-val">独立产品负责人</div></div>
+      <div><div class="meta-label">技术栈</div><div class="meta-val">Python · Claude API · JavaScript</div></div>
+      <div><div class="meta-label">Demo</div><div class="meta-val"><a href="https://111tang-no1.github.io/yonsei-course-finder/" target="_blank" style="color:var(--accent2);text-decoration:none">在线访问 ↗</a></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+  <div class="metrics-row">
+    <div class="metric-card"><span class="metric-num">400+</span><div class="metric-label">推广触达用户</div></div>
+    <div class="metric-card"><span class="metric-num">50+</span><div class="metric-label">真实用户反馈</div></div>
+    <div class="metric-card"><span class="metric-num">35</span><div class="metric-label">已收录课程</div></div>
+    <div class="metric-card"><span class="metric-num">3</span><div class="metric-label">关键迭代洞察</div></div>
+  </div>
+
+  <h2>背景与问题定义</h2>
+  <p>延世大学每学期选课窗口极短，课程考核信息全藏于各课程独立PDF中，需逐一打开大量无标题页面比对。严重影响「保奖学金 + 控考试压力」双目标下的选课决策效率——这是我自己真实遇到的问题。</p>
+  <div class="callout"><strong>核心矛盾：</strong>用户需要在极短的窗口期内基于不透明的考核信息做出影响学期绩点的决策，现有系统完全无法支撑。</div>
+  <div class="placeholder-img"><span>[ 用户场景图 / 痛点示意图 — 请替换 ]</span></div>
+
+  <h2>用户研究与需求洞察</h2>
+  <h3>目标用户</h3>
+  <p>主要用户：延世大学在读学生，尤其是奖学金学生（对绩点敏感）和选课经验少的新生（信息不对称更严重）。次要用户：对考核结构有明确偏好的研究生（希望避开高压课程）。</p>
+  <h3>关键用户洞察</h3>
+  <ul>
+    <li>用户普遍花30分钟以上打开多个PDF比对信息，效率极低</li>
+    <li>「保奖学金」和「控考试压力」是两个相互影响的决策维度，需要同时考虑</li>
+    <li>口语化需求（"不想有团队项目"）比点击筛选条件更符合用户心智模型</li>
+  </ul>
+  <hr class="divider">
+
+  <h2>产品设计与核心决策</h2>
+  <h3>决策一：EASE SCORE 模型</h3>
+  <p>设计 Ease Score 指标模型：<strong>Ease Score = 100 - (期中占比 + 期末占比)</strong>。只用考试指标而不加权其他维度，因为「考试压力」是跨用户的最大共识，而作业、出勤等因人而异。将考试占比换算为0–100直观分值，用户无需手动计算即可快速比较课程压力。</p>
+  <div class="highlight"><strong>设计原则：</strong>把认知负担内化为界面逻辑，而不是让用户自己计算。</div>
+
+  <h3>决策二：OCR + Override 数据管道</h3>
+  <p>搭建OCR管道抽取课程考核占比，但OCR对韩英混排识别率不稳定。设计override底座机制：OCR跑完后可手动修正，保证MVP阶段工具始终可用。这是「先让产品能用，再让产品好用」的迭代逻辑。</p>
+
+  <h3>决策三：LLM + 本地 Fallback 双层架构</h3>
+  <p>集成Claude API实现自然语言搜索——用户输入口语化需求，Claude理解后返回符合条件的课程ID列表，前端按ID过滤展示。超过5秒timeout自动降级为本地关键词匹配，保障演示稳定性。AI能力是增强，不是依赖。</p>
+  <div class="placeholder-img"><span>[ 产品架构图 / 技术流程图 — 请替换 ]</span></div>
+  <hr class="divider">
+
+  <h2>冷启动策略</h2>
+  <p>向延世各学院学生微信群和Kakao Talk群发送链接，话术核心是痛点描述优先，而非功能介绍：</p>
+  <div class="callout">「延世选课的时候是不是要打开一堆PDF找期中期末占比？我做了个工具，直接搜就能看到所有课的考核结构，还能按『不要团队项目』这种方式筛选。」</div>
+  <p>初始触达约400人，通过同学帮忙转发实现自然增长，收集50+条真实用户反馈。</p>
+  <hr class="divider">
+
+  <h2>用户反馈与迭代</h2>
+  <h3>最痛的一条反馈</h3>
+  <div class="callout">「我要选的课根本不在里面。」——这条反馈直接否定了产品价值。功能再好，用户要选的课不在库里，产品对他就是零价值。这让我深刻理解了数据冷启动是工具型产品最难跨越的门槛。</div>
+  <h3>三大核心迭代洞察</h3>
+  <ul>
+    <li><strong>本地化需求：</strong>中韩用户对全英文界面不适应，识别为i18n架构问题，列入v2计划</li>
+    <li><strong>数据冷启动瓶颈：</strong>覆盖面不足，规划众包录入机制作为数据飞轮</li>
+    <li><strong>功能扩展需求：</strong>用户希望加入上课时间，涉及对接延世官方系统，放入长期规划</li>
+  </ul>
+  <hr class="divider">
+
+  <h2>复盘与反思</h2>
+  <p>如果重来一遍，有三件事会做得不一样：第一，先做5-10个用户访谈再动手，而不是凭自己的痛点直接开始；第二，冷启动方案（众包机制）应在产品设计阶段就规划好；第三，设定清晰的成功指标，比如「使用工具后的选课改变率」，让迭代方向更有数据依据。</p>
+
+  <h2>下一步迭代方向</h2>
+  <ul>
+    <li>数据飞轮：众包录入机制，让用户贡献数据变成自然行为</li>
+    <li>本地化：i18n多语言架构，支持中文/韩文界面切换</li>
+    <li>数据扩充：目标从35门扩展到100+门课程</li>
+  </ul>
+</div>
+
+<div class="case-footer">
+  <a href="./index.html">← 返回主页</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="./case-coffee.html">下一个项目：移动咖啡车 →</a>
+</div>
+</body>
+</html>
