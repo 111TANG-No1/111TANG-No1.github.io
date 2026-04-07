@@ -47,6 +47,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,
 .back-link:hover{color:var(--accent)}
 footer{text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink3);border-top:1px solid var(--rule)}
 @media(max-width:640px){nav{padding:0 20px}.nav-links{gap:20px}.lab-hero-inner,.lab-body{padding-left:20px;padding-right:20px}.lab-hero h1{font-size:2.2rem}.lab-card-head,.lab-card-body{padding-left:20px;padding-right:20px}}
+
+/* Phone mockup */
+.proto-wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;justify-content:center;padding:8px 0}
+.phone-shell{width:300px;height:620px;background:#1a1a1a;border-radius:40px;border:8px solid #111;box-shadow:0 20px 60px rgba(0,0,0,.35),inset 0 0 0 2px #333;position:relative;overflow:hidden;flex-shrink:0}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:26px;background:#111;border-radius:0 0 18px 18px;z-index:10}
+.phone-iframe{width:100%;height:100%;border:none;border-radius:32px;display:block}
+.proto-side{max-width:280px}
+.proto-desc-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.proto-desc-body{font-size:.88rem;color:var(--ink3);line-height:1.75;margin-bottom:20px}
+.proto-full-btn{display:inline-block;padding:14px 20px;background:var(--ink);color:#fff;border-radius:4px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.7rem;line-height:1.6;transition:background .15s}
+.proto-full-btn span{color:var(--accent2);font-size:.65rem}
+.proto-full-btn:hover{background:#333}
+@media(max-width:700px){.proto-wrap{flex-direction:column}.proto-side{max-width:100%;text-align:center}.phone-shell{width:260px;height:540px}}
 </style>
 </head>
 <body>
@@ -86,10 +99,18 @@ footer{text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;fon
         <div class="lab-card-desc">针对高中生课间 10 分钟极致场景设计的 O2O 预约取餐原型。解决线下实体高峰期「炸单」与「履约不确定性」两大核心痛点，通过错峰预约机制拉平潮汐效应，提升人效与用户体验。</div>
       </div>
       <div class="lab-card-body">
-        <div class="figma-embed-placeholder">
-          <div class="ph-icon">⬡</div>
-          <div class="ph-title">Figma 原型图 · 即将放入</div>
-          <div class="ph-sub">交互设计稿制作中，完成后将嵌入 Figma Embed 或替换为高清截图</div>
+        <div class="proto-wrap">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <iframe src="https://111tang-no1.github.io/coffee-cart-prototype/"
+              class="phone-iframe" title="移动咖啡车极速预约原型"
+              sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+          </div>
+          <div class="proto-side">
+            <div class="proto-desc-title">极速预约小程序</div>
+            <p class="proto-desc-body">针对高中生课间 10 分钟极致场景设计的 O2O 预约取餐原型。解决线下实体高峰期「炸单」与「履约不确定性」两大核心痛点，通过错峰预约拉平潮汐效应。</p>
+            <a href="https://111tang-no1.github.io/coffee-cart-prototype/" target="_blank" class="proto-full-btn">在新标签页全屏体验原型<br><span>Open Full Prototype ↗</span></a>
+          </div>
         </div>
       </div>
     </div>
