@@ -2,343 +2,247 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>唐家琦 · Tang Jiaqi</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0f0f0f;--ink2:#2a2a2a;--ink3:#555;--ink4:#888;--rule:#e0ddd8;--bg:#fafaf8;--bg2:#f4f3ef;--accent:#1a3a5c;--accent2:#c8a96e;--white:#fff;--shadow:0 2px 20px rgba(0,0,0,.06);--shadow-lg:0 8px 48px rgba(0,0,0,.1)}
+:root{--ink:#0f0e0c;--ink2:#3a3830;--ink3:#7a7668;--paper:#faf9f6;--paper2:#f2f0eb;--rule:#e4e0d8;--w:#fff;--blue:#1a3a5c;--blue2:#eef2f7;--gold:#c8a96e;--goldb:#fdf6e8;--sh:0 2px 16px rgba(15,14,12,.07);--shl:0 6px 32px rgba(15,14,12,.11)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.7;overflow-x:hidden}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
-.nav-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--accent);font-weight:700}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink4);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:color .15s}
-.nav-links a:hover{color:var(--accent)}
-
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:80px 40px 60px;gap:60px;max-width:1100px;margin:0 auto}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;padding:5px 12px;border:1px solid rgba(26,58,92,.2);border-radius:20px;background:rgba(26,58,92,.04)}
-.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
-h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;line-height:1.08;margin-bottom:6px}
-h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--ink4);letter-spacing:.8px;margin-bottom:22px}
-.hero-desc{font-size:.97rem;color:var(--ink3);line-height:1.82;margin-bottom:30px;max-width:480px}
-.hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
-.badge{padding:5px 13px;border-radius:6px;font-size:.7rem;font-family:'JetBrains Mono',monospace;border:1px solid;font-weight:500}
-.badge-a{background:#eef2fa;border-color:rgba(26,58,92,.2);color:var(--accent)}
-.badge-b{background:#fdf6e8;border-color:rgba(200,169,110,.35);color:#7a5c1a}
-.badge-c{background:#f0faf4;border-color:rgba(21,110,60,.2);color:#15562c}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn-p{padding:11px 24px;background:var(--accent);color:#fff;border:none;border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:.75rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,transform .15s;font-weight:500}
-.btn-p:hover{background:#0f2540;transform:translateY(-1px)}
-.btn-o{padding:11px 24px;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:.75rem;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s;font-weight:500}
-.btn-o:hover{background:#eef2fa;transform:translateY(-1px)}
-.btn-g{padding:11px 24px;background:var(--ink);color:#fff;border:none;border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:.75rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,transform .15s;font-weight:500}
-.btn-g:hover{background:#333;transform:translateY(-1px)}
-
-.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
-.hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--rule);box-shadow:var(--shadow-lg)}
-.hero-photo-placeholder{width:200px;height:200px;border-radius:50%;background:var(--rule);border:3px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink4)}
-.hero-card{background:var(--white);border:1.5px solid var(--rule);border-radius:16px;padding:26px;box-shadow:var(--shadow-lg);width:100%;max-width:320px}
-.hc-label{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--ink4);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
-.hc-stat{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--rule)}
-.hc-stat:last-child{border-bottom:none}
-.hc-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--accent);min-width:62px;line-height:1}
-.hc-text{font-size:.8rem;color:var(--ink3);line-height:1.4}
-.hc-text small{font-size:.72rem;color:var(--ink4)}
-
-.wrap{max-width:1100px;margin:0 auto;padding:80px 40px}
-.sec-label{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--ink4);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
-.sec-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--ink);margin-bottom:40px;line-height:1.2}
-
-.project-grid{display:flex;flex-direction:column;gap:28px}
-.pcard{background:var(--white);border:1.5px solid var(--rule);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s}
-.pcard:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
-.pcard-head{padding:22px 26px 16px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.pcard-num{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--ink4);letter-spacing:1px;margin-bottom:4px}
-.pcard-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:4px}
-.pcard-sub{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);margin-bottom:10px}
-.pcard-tags{display:flex;flex-wrap:wrap;gap:6px}
-.ptag{padding:3px 9px;border-radius:4px;font-size:.63rem;font-family:'JetBrains Mono',monospace;background:var(--bg2);border:1px solid var(--rule);color:var(--ink3);font-weight:500}
-.pcard-body{padding:18px 26px}
-.pcard-desc{font-size:.92rem;color:var(--ink3);line-height:1.75;margin-bottom:18px}
-.pcard-metrics{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-.metric{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:9px 14px;text-align:center;min-width:80px}
-.metric-num{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--accent);display:block;line-height:1;margin-bottom:3px}
-.metric-lbl{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--ink4)}
-.pcard-actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn-demo{padding:8px 16px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.7rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s;font-weight:500}
-.btn-demo:hover{background:#0f2540}
-.btn-case{padding:8px 16px;background:transparent;color:var(--accent);border:1.5px solid var(--accent);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.7rem;cursor:pointer;text-decoration:none;display:inline-block;transition:all .15s;font-weight:500}
-.btn-case:hover{background:#eef2fa}
-
-.exp-section{background:var(--white);padding:2px 0}
-.exp-card{background:var(--white);border:1.5px solid var(--rule);border-radius:12px;padding:22px 26px;box-shadow:var(--shadow)}
-.exp-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:3px}
-.exp-role{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);margin-bottom:12px}
-.exp-ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-.exp-ul li{padding-left:16px;position:relative;font-size:.9rem;color:var(--ink3);line-height:1.6}
-.exp-ul li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.68rem;top:4px}
-
-.edu-grid{display:flex;flex-direction:column;gap:14px}
-.edu-card{background:var(--white);border:1.5px solid var(--rule);border-radius:12px;padding:20px 24px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
-.edu-school{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:3px}
-.edu-deg{font-size:.84rem;color:var(--ink3);margin-bottom:10px}
-.edu-date{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink4);white-space:nowrap}
-.awards{display:flex;flex-wrap:wrap;gap:6px}
-.award{padding:2px 9px;background:#fdf6e8;border:1px solid rgba(200,169,110,.3);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.63rem;color:#7a5c1a}
-
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
-.skill-block{background:var(--white);border:1.5px solid var(--rule);border-radius:12px;padding:20px 24px;box-shadow:var(--shadow)}
-.skill-title{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
-.skill-pills{display:flex;flex-wrap:wrap;gap:7px}
-.pill{padding:4px 11px;background:var(--bg2);border:1px solid var(--rule);border-radius:20px;font-size:.77rem;color:var(--ink3)}
-
-.contact-sec{background:var(--accent);padding:60px 40px;text-align:center}
-.contact-sec h2{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff;margin-bottom:10px}
-.contact-slogan{color:rgba(255,255,255,.72);font-size:.87rem;margin-bottom:26px;line-height:1.7}
-.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.clink{padding:10px 20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:7px;color:#fff;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.73rem;transition:background .15s}
-.clink:hover{background:rgba(255,255,255,.22)}
-footer{text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--ink4);border-top:1px solid var(--rule)}
-
-.fi{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:54px;background:rgba(250,249,246,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.nl{font-family:'Playfair Display',serif;font-size:1rem;color:var(--blue);text-decoration:none}
+.nu{display:flex;gap:32px;list-style:none}
+.nu a{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink3);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:color .15s}
+.nu a:hover{color:var(--blue)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center;max-width:1140px;margin:0 auto;padding:80px 48px 60px}
+.ey{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:22px}
+.ey::before{content:'';width:20px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,4rem);font-weight:700;line-height:1.06;color:var(--ink);margin-bottom:10px}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hr{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--ink3);letter-spacing:1px;margin-bottom:26px}
+.hd{font-size:.97rem;color:var(--ink2);line-height:1.82;max-width:460px;margin-bottom:32px}
+.hb{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:.64rem;font-weight:500;border:1px solid}
+.ba{background:var(--blue2);border-color:rgba(26,58,92,.2);color:var(--blue)}
+.bg{background:var(--goldb);border-color:rgba(200,169,110,.3);color:#8a6820}
+.hc{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 24px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;text-decoration:none;border:1.5px solid;transition:all .15s}
+.bp{background:var(--blue);color:#fff;border-color:var(--blue)}.bp:hover{background:#142e4a;transform:translateY(-1px)}
+.bo{background:transparent;color:var(--blue);border-color:var(--blue)}.bo:hover{background:var(--blue2);transform:translateY(-1px)}
+.bgh{background:transparent;color:var(--ink3);border-color:var(--rule)}.bgh:hover{border-color:var(--ink3);color:var(--ink)}
+.pfc{background:var(--w);border:1.5px solid var(--rule);border-radius:16px;box-shadow:var(--shl);overflow:hidden}
+.pfp{background:linear-gradient(155deg,var(--blue) 0%,#2a5a8a 100%);padding:28px 28px 0;display:flex;justify-content:center}
+.pfimg{width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.2);display:block}
+.pfn{background:linear-gradient(155deg,var(--blue) 0%,#2a5a8a 100%);padding:10px 24px 18px;text-align:center}
+.pfname{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:3px}
+.pftag{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:rgba(255,255,255,.5);letter-spacing:.8px;text-transform:uppercase}
+.sg{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.st{padding:14px 16px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule)}
+.st:nth-child(even){border-right:none}
+.st:nth-last-child(-n+2){border-bottom:none}
+.sn{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--blue);line-height:1;display:block;margin-bottom:2px}
+.sl{font-size:.72rem;color:var(--ink3);line-height:1.4}
+.ss{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--rule);display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:72px 48px}
+.sey{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.stit{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--ink);margin-bottom:44px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.pc{background:var(--w);border:1.5px solid var(--rule);border-radius:6px;overflow:hidden;box-shadow:var(--sh);margin-bottom:22px;transition:box-shadow .2s,transform .2s}
+.pc:hover{box-shadow:var(--shl);transform:translateY(-2px)}
+.pt{padding:26px 30px 18px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;border-bottom:1px solid var(--paper2)}
+.pn{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--ink3);letter-spacing:1px;margin-bottom:5px}
+.ptit{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ps{font-size:.8rem;color:var(--blue);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{padding:2px 9px;border-radius:2px;font-family:'JetBrains Mono',monospace;font-size:.6rem;background:var(--paper2);border:1px solid var(--rule);color:var(--ink3);white-space:nowrap}
+.ca{background:var(--blue2);border-color:rgba(26,58,92,.2);color:var(--blue)}
+.pb{padding:20px 30px}
+.pd{font-size:.9rem;color:var(--ink2);line-height:1.75}
+.pf{padding:14px 30px;border-top:1px solid var(--paper2);display:flex;gap:8px;flex-wrap:wrap}
+.cof{background:var(--blue);border-radius:6px;padding:36px 40px;margin-bottom:22px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cof .pn{color:rgba(255,255,255,.4)}
+.cof .ptit{color:#fff;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700}
+.cof .ps{color:var(--gold)}
+.cof .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
+.cof .pd{color:rgba(255,255,255,.8)}
+.cs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cst{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:14px 16px;text-align:center}
+.csn{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);display:block;line-height:1}
+.csl{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.55);margin-top:4px}
+.bl{display:inline-block;margin-top:18px;padding:10px 22px;background:#fff;color:var(--blue);border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:600;text-decoration:none;border:1.5px solid #fff;transition:all .15s}
+.bl:hover{background:transparent;color:#fff}
+.ec{background:var(--w);border:1.5px solid var(--rule);border-radius:6px;padding:26px 30px;box-shadow:var(--sh)}
+.et{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.er{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);margin-bottom:14px}
+.eu{list-style:none;display:flex;flex-direction:column;gap:5px}
+.eu li{font-size:.87rem;color:var(--ink2);padding-left:14px;position:relative;line-height:1.6}
+.eu li::before{content:'–';position:absolute;left:0;color:var(--gold)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:40px}
+.edc{background:var(--w);border:1.5px solid var(--rule);border-radius:6px;padding:22px 26px;box-shadow:var(--sh)}
+.esch{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.edeg{font-size:.8rem;color:var(--ink2);margin-bottom:10px}
+.edt{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink3);margin-bottom:10px}
+.aw{display:flex;flex-wrap:wrap;gap:5px}
+.award{padding:2px 8px;border-radius:2px;font-size:.65rem;font-family:'JetBrains Mono',monospace;background:var(--goldb);border:1px solid rgba(200,169,110,.25);color:#8a6820}
+.skg{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.skc{background:var(--w);border:1.5px solid var(--rule);border-radius:6px;padding:22px 26px;box-shadow:var(--sh)}
+.skcat{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.skp{display:flex;flex-wrap:wrap;gap:7px}
+.pill{padding:4px 10px;border-radius:2px;font-size:.76rem;color:var(--ink2);background:var(--paper2);border:1px solid var(--rule)}
+.con{background:var(--ink);color:#fff;padding:60px 48px;text-align:center}
+.con h2{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;margin-bottom:8px}
+.csl2{color:rgba(255,255,255,.5);font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.3px;margin-bottom:28px}
+.clks{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.clk{padding:10px 22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:3px;color:rgba(255,255,255,.8);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.7rem;transition:all .15s}
+.clk:hover{background:rgba(255,255,255,.16);color:#fff}
+footer{text-align:center;padding:20px;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--ink3);border-top:1px solid var(--rule)}
+.fi{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
 .fi.vis{opacity:1;transform:translateY(0)}
-
-@media(max-width:768px){
-  nav{padding:0 20px}
-  .hero{grid-template-columns:1fr;padding:80px 20px 40px;gap:36px}
-  .hero-right{display:none}
-  .wrap{padding:60px 20px}
-  .skills-grid{grid-template-columns:1fr}
-  .contact-sec{padding:40px 20px}
-  .edu-card{grid-template-columns:1fr}
+@media(max-width:900px){
+  nav{padding:0 20px}.nu{gap:20px}
+  .hero{grid-template-columns:1fr;padding:80px 20px 40px;gap:40px}
+  .wrap{padding:56px 20px}
+  .cof{grid-template-columns:1fr;gap:24px;padding:24px 20px}
+  .pt{grid-template-columns:1fr}
+  .pt,.pb,.pf{padding-left:20px;padding-right:20px}
+  .eg,.skg{grid-template-columns:1fr}
+  .con{padding:48px 20px}
 }
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="nav-brand">唐家琦 · Tang Jiaqi</div>
-  <ul class="nav-links">
+  <a href="#" class="nl">唐家琦 · Tang Jiaqi</a>
+  <ul class="nu">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="./lab.html">Product Lab</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Open to Internship · 2026</div>
+  <div>
+    <div class="ey">Open to Internship · 2026</div>
     <h1>唐家琦<br><em>Tang Jiaqi</em></h1>
-    <p class="hero-sub">Product Manager &amp; Business Innovator</p>
-    <p class="hero-desc">延世大学国际学硕士在读，兼具人文同理心与精算数据逻辑。擅长从真实痛点出发，通过敏捷原型开发（MVP）跑通产品闭环；同时拥有实体商业（O2O）操盘经验，具备极强的 ROI 意识与项目落地能力。致力于在业务创新与用户体验中创造真实商业价值。</p>
-    <div class="hero-badges">
-      <span class="badge badge-a">🎓 延世大学 QS Top 50</span>
-      <span class="badge badge-b">📐 吉林大学 985 · 精算数学</span>
-      <span class="badge badge-c">✦ 3 个产品项目 · 真实用户验证</span>
+    <p class="hr">PRODUCT MANAGER &amp; BUSINESS INNOVATOR</p>
+    <p class="hd">延世大学国际学硕士在读，兼具人文同理心与精算数据逻辑。擅长从真实痛点出发，通过敏捷原型开发（MVP）跑通产品闭环；同时拥有实体商业（O2O）操盘经验，具备极强的 ROI 意识与项目落地能力。致力于在业务创新与用户体验中创造真实商业价值。</p>
+    <div class="hb">
+      <span class="badge ba">🎓 延世大学 QS 50</span>
+      <span class="badge ba">📚 吉林大学 985 · 精算数学</span>
+      <span class="badge bg">✦ 3 个产品项目 · 真实用户验证</span>
     </div>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-p">查看项目 →</a>
-      <a href="./Tang_Jiaqi_Resume.pdf" download class="btn-o">下载简历 ↓</a>
-      <a href="https://github.com/111TANG-No1" target="_blank" class="btn-g">GitHub ↗</a>
+    <div class="hc">
+      <a href="#projects" class="btn bp">查看项目 →</a>
+      <a href="./Tang_Jiaqi_Resume.pdf" download class="btn bo">下载简历 ↓</a>
+      <a href="https://github.com/111TANG-No1" target="_blank" class="btn bgh">GitHub ↗</a>
     </div>
   </div>
-  <div class="hero-right">
-    <img src="./profile-photo.PNG" alt="唐家琦" class="hero-photo" onerror="this.style.display='none'">
-    <div class="hero-card">
-      <div class="hc-label">// Core Metrics</div>
-      <div class="hc-stat">
-        <div class="hc-num">400+</div>
-        <div class="hc-text">选课工具推广覆盖<br><small>Yonsei Course Finder</small></div>
-      </div>
-      <div class="hc-stat">
-        <div class="hc-num">80%+</div>
-        <div class="hc-text">核心时段复购率<br><small>Mobile Coffee Cart O2O</small></div>
-      </div>
-      <div class="hc-stat">
-        <div class="hc-num">30+</div>
-        <div class="hc-text">宠物助手用户验证<br><small>Pet Pal Hub MVP</small></div>
-      </div>
-      <div class="hc-stat">
-        <div class="hc-num">前3%</div>
-        <div class="hc-text">院长荣誉名单<br><small>延世大学 · 提前毕业</small></div>
-      </div>
+
+  <div class="pfc fi">
+    <div class="pfp">
+      <img src="./profile-photo.PNG" alt="唐家琦" class="pfimg" onerror="this.style.display='none'">
+    </div>
+    <div class="pfn">
+      <div class="pfname">唐家琦 · Tang Jiaqi</div>
+      <div class="pftag">Product Manager · QS 50 · Class of 2026</div>
+    </div>
+    <div class="sg">
+      <div class="st"><span class="sn">400+</span><span class="sl">选课工具推广覆盖</span><span class="ss">Yonsei Course Finder</span></div>
+      <div class="st"><span class="sn">80%+</span><span class="sl">核心时段复购率</span><span class="ss">Coffee Cart O2O</span></div>
+      <div class="st"><span class="sn">30+</span><span class="sl">宠物助手用户验证</span><span class="ss">Pet Pal Hub MVP</span></div>
+      <div class="st"><span class="sn">前3%</span><span class="sl">院长荣誉名单</span><span class="ss">延世大学 · 提前毕业</span></div>
     </div>
   </div>
 </section>
 
-<div id="projects" class="wrap">
-  <div class="sec-label">// Portfolio</div>
-  <div class="sec-title">产品项目</div>
-  <div class="project-grid">
+<div id="projects" style="background:var(--w);border-top:1px solid var(--rule)">
+<div class="wrap">
+  <div class="sey">// Portfolio</div>
+  <div class="stit">产品项目</div>
 
-    <div class="pcard fi">
-      <div class="pcard-head">
-        <div>
-          <div class="pcard-num">PROJECT 01</div>
-          <div class="pcard-title">Yonsei Course Finder</div>
-          <div class="pcard-sub">AI 驱动的选课决策与结构化检索工具</div>
-          <div class="pcard-tags">
-            <span class="ptag">EASE SCORE 模型</span>
-            <span class="ptag">大模型 Fallback 机制</span>
-            <span class="ptag">冷启动与用户验证</span>
-          </div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <p class="pcard-desc">通过深度访谈定位「保奖+控压」痛点，独创 EASE SCORE 压力量化模型。采用 OCR + LLM + 本地规则双层兜底架构，保障系统稳健性，MVP 阶段获 400+ 活跃用户，验证了考试类型筛选与课程压力评估的核心需求价值，识别出数据冷启动与本地化适配为后续重点迭代方向。</p>
-        <div class="pcard-metrics">
-          <div class="metric"><span class="metric-num">400+</span><div class="metric-lbl">推广覆盖</div></div>
-          <div class="metric"><span class="metric-num">50+</span><div class="metric-lbl">真实反馈</div></div>
-          <div class="metric"><span class="metric-num">35</span><div class="metric-lbl">课程收录</div></div>
-        </div>
-        <div class="pcard-actions">
-          <a href="https://111tang-no1.github.io/yonsei-course-finder/" target="_blank" class="btn-demo">查看 Demo ↗</a>
-          <a href="./case-yonsei.html" class="btn-case">阅读产品复盘 (Case Study) →</a>
-        </div>
-      </div>
+  <div class="pc fi">
+    <div class="pt">
+      <div><div class="pn">PROJECT 01</div><div class="ptit">Yonsei Course Finder</div><div class="ps">AI 驱动的选课决策与结构化检索工具</div></div>
+      <div class="chips"><span class="chip ca">EASE SCORE 模型</span><span class="chip ca">大模型 Fallback 机制</span><span class="chip ca">冷启动与用户验证</span><span class="chip">OCR Pipeline</span><span class="chip">Claude API</span><span class="chip">Python</span></div>
     </div>
+    <div class="pb"><p class="pd">通过深度访谈定位「保奖+控压」痛点，独创 EASE SCORE 压力量化模型，将考试占比转化为 0–100 直观分值，降低用户决策认知负担。采用 OCR + LLM + 本地规则双层兜底架构，MVP 阶段推广覆盖 400+ 用户，收集 50+ 条真实反馈，已收录 100+ 门课程。</p></div>
+    <div class="pf"><a href="https://111tang-no1.github.io/yonsei-course-finder/" target="_blank" class="btn bp">查看 Demo →</a><a href="./case-yonsei.html" class="btn bo">阅读产品复盘 (Case Study)</a></div>
+  </div>
 
-    <div class="pcard fi">
-      <div class="pcard-head">
-        <div>
-          <div class="pcard-num">PROJECT 02</div>
-          <div class="pcard-title">Mobile Coffee Cart · 移动咖啡车</div>
-          <div class="pcard-sub">基于 LBS 场景的 O2O 实体商业操盘</div>
-          <div class="pcard-tags">
-            <span class="ptag">ROI 动态优化</span>
-            <span class="ptag">私域流量裂变</span>
-            <span class="ptag">坪效管理</span>
-          </div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <p class="pcard-desc">运用「流量 × 转化 × 竞品」模型精准选址，跑通单点盈利模型。通过微信私域社群精细化运营与异业联盟，核心时段复购率稳定在 80% 以上，首月实现资金回正，积累了完整的线下场景用户洞察与快速迭代经验。</p>
-        <div class="pcard-metrics">
-          <div class="metric"><span class="metric-num">80%+</span><div class="metric-lbl">核心复购率</div></div>
-          <div class="metric"><span class="metric-num">20+</span><div class="metric-lbl">固定客户</div></div>
-          <div class="metric"><span class="metric-num">首月</span><div class="metric-lbl">实现回正</div></div>
-        </div>
-        <div class="pcard-actions">
-          <a href="./case-coffee.html" class="btn-case">查看项目复盘 →</a>
-        </div>
-      </div>
+  <div class="cof fi">
+    <div>
+      <div class="pn">PROJECT 02</div>
+      <div class="ptit" style="margin-bottom:6px">移动咖啡车</div>
+      <div class="ps" style="margin-bottom:16px">基于 LBS 场景的 O2O 实体商业操盘</div>
+      <div class="chips" style="margin-bottom:18px"><span class="chip">ROI 动态优化</span><span class="chip">私域流量裂变</span><span class="chip">坪效管理</span></div>
+      <p class="pd">运用「流量×转化×竞品」模型精准选址，跑通单点盈利模型。通过微信私域社群精细化运营与异业联盟，核心时段复购率稳定在 80% 以上，固定客户 100+，首月实现资金回正。</p>
+      <a href="./case-coffee.html" class="bl">查看项目复盘 →</a>
     </div>
-
-    <div class="pcard fi">
-      <div class="pcard-head">
-        <div>
-          <div class="pcard-num">PROJECT 03</div>
-          <div class="pcard-title">Pet Pal Hub</div>
-          <div class="pcard-sub">宠物伴侣多维社交与 AI 健康管理 MVP</div>
-          <div class="pcard-tags">
-            <span class="ptag">极客式零后端架构</span>
-            <span class="ptag">LBS 筛选漏斗</span>
-            <span class="ptag">场景化 AI 分流</span>
-          </div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <p class="pcard-desc">针对大型犬主人的真实痛点，剥离冗余功能，构建基于 LBS 与体型/性格的多维匹配漏斗。AI 助手采用「LLM 优先 + 模板回复兜底」双层架构，利用轻量级本地化架构（零后端 + localStorage）完成数据闭环，面向 30+ 目标用户验证核心业务逻辑。</p>
-        <div class="pcard-metrics">
-          <div class="metric"><span class="metric-num">30+</span><div class="metric-lbl">用户验证</div></div>
-          <div class="metric"><span class="metric-num">4</span><div class="metric-lbl">核心模块</div></div>
-          <div class="metric"><span class="metric-num">0</span><div class="metric-lbl">后端依赖</div></div>
-        </div>
-        <div class="pcard-actions">
-          <a href="https://my-pet-pal-37.vercel.app" target="_blank" class="btn-demo">查看 Demo ↗</a>
-          <a href="./case-pet.html" class="btn-case">阅读产品复盘 (Case Study) →</a>
-        </div>
-      </div>
+    <div class="cs">
+      <div class="cst"><span class="csn">80%+</span><div class="csl">核心时段复购率</div></div>
+      <div class="cst"><span class="csn">100+</span><div class="csl">固定客户</div></div>
+      <div class="cst"><span class="csn">20+</span><div class="csl">爆款 SKU</div></div>
+      <div class="cst"><span class="csn">首月</span><div class="csl">资金回正</div></div>
     </div>
+  </div>
 
+  <div class="pc fi">
+    <div class="pt">
+      <div><div class="pn">PROJECT 03</div><div class="ptit">Pet Pal Hub</div><div class="ps">宠物伴侣多维社交与 AI 健康管理 MVP</div></div>
+      <div class="chips"><span class="chip ca">极客式零后端架构</span><span class="chip ca">LBS 筛选漏斗</span><span class="chip ca">场景化 AI 分流</span><span class="chip">React + TypeScript</span><span class="chip">敏捷开发</span><span class="chip">Vercel</span></div>
+    </div>
+    <div class="pb"><p class="pd">针对大型犬主人真实痛点，构建基于 LBS 与体型/性格的多维匹配漏斗。设计 LLM 接口优先 + 模板兜底的双层 AI 架构，保障演示稳定性。面向 30+ 目标用户完成可用性验证。</p></div>
+    <div class="pf"><a href="https://my-pet-pal-37.vercel.app" target="_blank" class="btn bp">查看 Demo →</a><a href="./case-pet.html" class="btn bo">阅读产品复盘 (Case Study)</a></div>
+  </div>
+</div>
+</div>
+
+<div id="experience" class="wrap">
+  <div class="sey">// Experience</div>
+  <div class="stit">校园经历</div>
+  <div class="ec fi">
+    <div class="et">吉林大学韩语文化社团</div>
+    <div class="er">策划宣传部部长 | 2021.09 — 2023.05</div>
+    <ul class="eu">
+      <li><strong>统筹管理：</strong>建立标准化任务看板，领导 30+ 成员并行推进 20 余场大型活动，确保项目按期交付。</li>
+      <li><strong>用户增长：</strong>构建跨平台宣传矩阵，核心活动单场参与人数峰值突破 80+，整体参与度提升 160%。</li>
+    </ul>
   </div>
 </div>
 
-<div id="experience" class="exp-section">
-  <div class="wrap" style="padding-top:60px;padding-bottom:60px">
-    <div class="sec-label">// Experience</div>
-    <div class="sec-title">其他经历</div>
-    <div class="exp-card fi">
-      <div class="exp-title">吉林大学韩语文化社团</div>
-      <div class="exp-role">策划宣传部部长 | 2021.09 — 2023.05</div>
-      <ul class="exp-ul">
-        <li><strong>统筹管理：</strong>建立标准化任务看板，领导 30+ 成员并行推进 20 余场大型活动。</li>
-        <li><strong>用户增长：</strong>构建跨平台宣传矩阵，核心活动单场参与人数峰值突破 80+，整体参与度提升 160%。</li>
-      </ul>
-    </div>
+<div id="education" style="background:var(--w);border-top:1px solid var(--rule)">
+<div class="wrap">
+  <div class="sey">// Education</div>
+  <div class="stit">教育背景</div>
+  <div class="eg">
+    <div class="edc fi"><div class="esch">延世大学（QS 50）</div><div class="edeg">硕士在读 · 国际学</div><div class="edt">2025.09 — 2026.12（提前毕业）</div><div class="aw"><span class="award">院长荣誉名单（前3%）</span><span class="award">入学奖学金</span><span class="award">院长奖学金</span><span class="award">提前毕业</span></div></div>
+    <div class="edc fi"><div class="esch">吉林大学（985）</div><div class="edeg">本科 · 朝鲜语专业 · 辅修双学位：保险精算 / 精算数学</div><div class="edt">2020.09 — 2025.06</div><div class="aw"><span class="award">经济学学位</span><span class="award">韩语专八</span></div></div>
+  </div>
+  <div class="sey" style="margin-bottom:16px">// Skills</div>
+  <div class="skg">
+    <div class="skc fi"><div class="skcat">Product &amp; Business · 产品与商业</div><div class="skp"><span class="pill">产品需求文档 PRD</span><span class="pill">MVP 敏捷构建</span><span class="pill">用户旅程图</span><span class="pill">商业模型设计 ROI</span><span class="pill">增长黑客</span><span class="pill">Figma</span></div></div>
+    <div class="skc fi"><div class="skcat">Tech &amp; Data · 技术与数据</div><div class="skp"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">React / JS 基础</span><span class="pill">LLM Prompt Engineering</span><span class="pill">API 集成开发</span></div></div>
   </div>
 </div>
-
-<div id="education" class="wrap">
-  <div class="sec-label">// Education</div>
-  <div class="sec-title">教育背景</div>
-  <div class="edu-grid">
-    <div class="edu-card fi">
-      <div>
-        <div class="edu-school">延世大学（QS 50）</div>
-        <div class="edu-deg">硕士在读 · 国际学</div>
-        <div class="awards">
-          <span class="award">院长荣誉名单（前 3%）</span>
-          <span class="award">入学奖学金</span>
-          <span class="award">院长奖学金</span>
-          <span class="award">提前毕业</span>
-        </div>
-      </div>
-      <div class="edu-date">2025.09 — 2026.12</div>
-    </div>
-    <div class="edu-card fi">
-      <div>
-        <div class="edu-school">吉林大学（985）</div>
-        <div class="edu-deg">本科 · 朝鲜语专业 · 辅修双学位：保险精算 · 精算数学</div>
-      </div>
-      <div class="edu-date">2020.09 — 2025.06</div>
-    </div>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-block fi">
-      <div class="skill-title">Product &amp; Business · 产品与商业</div>
-      <div class="skill-pills">
-        <span class="pill">产品需求文档 PRD</span>
-        <span class="pill">MVP 敏捷构建</span>
-        <span class="pill">用户旅程图</span>
-        <span class="pill">商业模型设计 ROI</span>
-        <span class="pill">增长黑客 Growth Hacking</span>
-        <span class="pill">Figma</span>
-      </div>
-    </div>
-    <div class="skill-block fi">
-      <div class="skill-title">Tech &amp; Data · 技术与数据</div>
-      <div class="skill-pills">
-        <span class="pill">Python</span>
-        <span class="pill">SQL</span>
-        <span class="pill">React / JS 基础</span>
-        <span class="pill">LLM Prompt Engineering</span>
-        <span class="pill">API 集成开发</span>
-      </div>
-    </div>
-  </div>
 </div>
 
-<div id="contact" class="contact-sec">
+<div id="contact" class="con">
   <h2>一起创造真实商业价值</h2>
-  <p class="contact-slogan">致力于通过技术创新与同理心，创造真实的商业价值<br>寻找 2026 暑期实习机会</p>
-  <div class="contact-links">
-    <a href="mailto:1092830683@qq.com" class="clink">✉ 1092830683@qq.com</a>
-    <a href="https://github.com/111TANG-No1" target="_blank" class="clink">⌥ GitHub ↗</a>
-    <a href="tel:13654376920" class="clink">☏ 136-5437-6920</a>
+  <p class="csl2">致力于通过技术创新与同理心，创造真实的商业价值 ｜ 寻找 2026 暑期实习机会</p>
+  <div class="clks">
+    <a href="mailto:1092830683@qq.com" class="clk">✉ 1092830683@qq.com</a>
+    <a href="https://github.com/111TANG-No1" target="_blank" class="clk">⌥ GitHub ↗</a>
+    <a href="tel:13654376920" class="clk">☏ 136-5437-6920</a>
   </div>
 </div>
+<footer>Tang Jiaqi · Product Portfolio · 2026 · Built with intention</footer>
 
-<footer>Tang Jiaqi · Product Portfolio · 2026</footer>
 <script>
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fi').forEach(el => io.observe(el));
+(function(){
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:0.08});
+  document.querySelectorAll('.fi').forEach(function(el){io.observe(el)});
+})();
 </script>
 </body>
 </html>
